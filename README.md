@@ -1,3 +1,3 @@
 # Caffeine
 
-Play a video file encoded in Base64.
+Go to bit.ly/gitcaffeine to browse index.html via githack.
