@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>video</title>
+    <title>Caffeine</title>
     <script type="text/javascript" defer><!--
       function $(tag) {
         return document.getElementById(tag);
@@ -25,24 +25,24 @@
         // generate a blob URL
         const blob = new Blob([buffer.buffer], {type: 'video/mp4'});
         const burl = URL.createObjectURL(blob);
-        $('WkTbIMLMtgx8').setAttribute('src', burl);
+        $('klHxKeNt').setAttribute('src', burl);
       };
       xhr.send();
 
       // play the video by clicking anywhere
       document.addEventListener('click', function(){
-        $('WkTbIMLMtgx8').play();
+        $('klHxKeNt').play();
       });
 /*
       // auto replay
       setInterval(function(){
-        $('WkTbIMLMtgx8').play();
+        $('klHxKeNt').play();
       }, 30000); // msec
 */
     // --></script>
   </head>
   <body>
-    <video id="WkTbIMLMtgx8" width="640" height="360" autoplay controls loop muted playsinline>
+    <video id="klHxKeNt" width="640" height="360" autoplay controls loop muted playsinline>
       <p>video unavailable</p>
     </video>
   </body>
