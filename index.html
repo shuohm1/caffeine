@@ -13,7 +13,8 @@
       xhr.open('GET', 'video.txt', true);
       xhr.onload = function(e) {
         // base64 to byte
-        const bytes = window.atob(this.responseText);
+        const b64text = this.responseText.replace(/\r?\n/g, '');
+        const bytes = window.atob(b64text);
 
         // byte to uint8
         const n = bytes.length;
@@ -27,7 +28,7 @@
         const burl = URL.createObjectURL(blob);
         $('klHxKeNt').setAttribute('src', burl);
       };
-      xhr.send();
+      xhr.send(null);
 
       // play the video by clicking anywhere
       document.addEventListener('click', function(){
