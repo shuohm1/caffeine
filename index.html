@@ -10,7 +10,9 @@
 
       // get a video data from a base64-encoded text file
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'video.txt', true);
+      const pt = 't=' + (Date.now() / 1000).toFixed(3);
+      const requrl = 'video.txt'.concat('?', pt);
+      xhr.open('GET', requrl, true);
       xhr.onload = function(e) {
         if (this.status === 0) {
           console.log(this);
