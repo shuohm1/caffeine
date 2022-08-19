@@ -12,6 +12,11 @@
       const xhr = new XMLHttpRequest();
       xhr.open('GET', 'video.txt', true);
       xhr.onload = function(e) {
+        if (this.status === 0) {
+          console.log(this);
+          return;
+        }
+
         // base64 to byte
         const b64text = this.responseText.replace(/\r?\n/g, '');
         const bytes = window.atob(b64text);
