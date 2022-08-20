@@ -3,55 +3,55 @@
   <head>
     <meta charset="utf-8">
     <title>Caffeine</title>
-    <script type="text/javascript" defer><!--
-      function $(tag) {
-        return document.getElementById(tag);
-      }
-
-      // get a video data from a base64-encoded text file
-      const xhr = new XMLHttpRequest();
-      const pt = 't=' + (Date.now() / 1000).toFixed(3);
-      const requrl = 'video.txt'.concat('?', pt);
-      xhr.open('GET', requrl, true);
-      xhr.onload = function(e) {
-        if (this.status === 0) {
-          console.log(this);
-          return;
-        }
-
-        // base64 to byte
-        const b64text = this.responseText.replace(/\r?\n/g, '');
-        const bytes = window.atob(b64text);
-
-        // byte to uint8
-        const n = bytes.length;
-        const buffer = new Uint8Array(n);
-        for (let i = 0; i < n; i++) {
-          buffer[i] = bytes.charCodeAt(i);
-        }
-
-        // generate a blob URL
-        const blob = new Blob([buffer.buffer], {type: 'video/mp4'});
-        const burl = URL.createObjectURL(blob);
-        $('klHxKeNt').setAttribute('src', burl);
-      };
-      xhr.send(null);
-
-      // play the video by clicking anywhere
-      document.addEventListener('click', function(){
-        $('klHxKeNt').play();
-      });
-/*
-      // auto replay
-      setInterval(function(){
-        $('klHxKeNt').play();
-      }, 30000); // msec
-*/
-    // --></script>
   </head>
   <body>
     <video id="klHxKeNt" width="640" height="360" autoplay controls loop muted playsinline>
       <p>video unavailable</p>
     </video>
+    <script type="text/javascript"><!--
+function $(tag) {
+  return document.getElementById(tag);
+}
+
+// get a video data from a base64-encoded text file
+const xhr = new XMLHttpRequest();
+const pt = 't=' + (Date.now() / 1000).toFixed(3);
+const requrl = 'video.txt'.concat('?', pt);
+xhr.open('GET', requrl, true);
+xhr.onload = function(e) {
+  if (this.status === 0) {
+    console.log(this);
+    return;
+  }
+
+  // base64 to byte
+  const b64text = this.responseText.replace(/\r?\n/g, '');
+  const bytes = window.atob(b64text);
+
+  // byte to uint8
+  const n = bytes.length;
+  const buffer = new Uint8Array(n);
+  for (let i = 0; i < n; i++) {
+    buffer[i] = bytes.charCodeAt(i);
+  }
+
+  // generate a blob URL
+  const blob = new Blob([buffer.buffer], {type: 'video/mp4'});
+  const burl = URL.createObjectURL(blob);
+  $('klHxKeNt').setAttribute('src', burl);
+};
+xhr.send(null);
+
+// play the video by clicking anywhere
+document.addEventListener('click', function(){
+  $('klHxKeNt').play();
+});
+/*
+// auto replay
+setInterval(function(){
+  $('klHxKeNt').play();
+}, 30000); // msec
+*/
+    // --></script>
   </body>
 </html>
