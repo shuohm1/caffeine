@@ -3,3 +3,4 @@ zlib.js/.git/
 !zlib.js/bin
 zlib.js/bin/*
 !zlib.js/bin/unzip.min.js
+!LICENSE*
